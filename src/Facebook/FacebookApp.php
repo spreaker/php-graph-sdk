@@ -89,7 +89,7 @@ class FacebookApp
     /**
      * Serializes the FacebookApp entity as a string.
      *
-     * @return string
+     * @return array
      */
     public function __serialize(): array
     {
