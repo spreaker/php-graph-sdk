@@ -139,11 +139,11 @@ class FacebookResponseException extends FacebookSDKException
 
         // OAuth authentication error
         if (isset($data['error']['type']) && $data['error']['type'] === 'OAuthException') {
-            return new static($response, new FacebookAuthenticationException($message, $code));
+            return new static($response, new FacebookAuthenticationException($message, $code ?? 0));
         }
 
         // All others
-        return new static($response, new FacebookOtherException($message, $code));
+        return new static($response, new FacebookOtherException($message, $code ?? 0));
     }
 
     /**
